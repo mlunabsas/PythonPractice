@@ -17,14 +17,14 @@ CLI.add_argument(
   "--environment",
   nargs="*",
   type=str,  # any type/callable can be used here
-  default=["TestVolatil"],
+  default=["Environment.TestVolatil"],
 )
 
 CLI.add_argument(
   "--test",
   nargs="*",
   type=str,  # any type/callable can be used here
-  default=["TestCases/OrangeHr/Login.py"],
+  default=["TestCases/OrangeHr/Login/LoginOK.py"],
 )
 
 # parse the command line
@@ -35,8 +35,3 @@ print("Browser: %r" % args.browser)
 print("Environment: %r" % args.environment)
 print("Case/Suite: %r" % args.test)
 config_run(args.browser[0],args.environment[0],args.test[0])
-
-from PageObjects.OrangeHR.Login.Login import Login
-
-tito=Login()
-tito.got_to_url("https://opensource-demo.orangehrmlive.com/")

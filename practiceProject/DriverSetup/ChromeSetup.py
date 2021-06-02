@@ -11,4 +11,4 @@ def configDriver():
                 path= "D:\Develop\Python\practiceProject\DriverSetup\Drivers\chromedriver.exe"
         else:
                 path= "DriverSetup / Drivers / chromedriver.exe"
-        return lambda : webdriver.Chrome(executable_path=path, options=options)
+        return webdriver.Chrome(executable_path=path, options=options)

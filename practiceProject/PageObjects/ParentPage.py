@@ -1,28 +1,10 @@
-from selenium import webdriver
-import platform
+from selenium.webdriver.remote.webdriver import WebDriver as RemoteWebDriver
+from Environment.TestVolatil import TestVolatil
 
 class ParentPage(object):
-    options = webdriver.ChromeOptions()
-    options.add_argument("--start-maximized")
-    options.add_argument("--no-startup-window")
-    #driver_loader_func = None
-    #driver = None
-    #environment = None
 
-    def __init__(self):
-        self.driver_loader_func = None
-        self.environment = None
-        self.driver = self.configDriver()
+    driver = RemoteWebDriver
+    test_values = TestVolatil
 
-    def saluda(self):
-        print("Hello friend!")
-
-    def openBrowser(self):
-        self.driver=ParentPage.driver_loader_func()
-
-    def configDriver(self):
-        if (platform.system() == "Windows"):
-            path = "D:\Develop\Python\practiceProject\DriverSetup\Drivers\chromedriver.exe"
-        else:
-            path = "DriverSetup / Drivers / chromedriver.exe"
-        return webdriver.Chrome(executable_path=path, options=self.options)
+    def find_by_xpath(self,xpath):
+        return self.driver.find_element_by_xpath(xpath)

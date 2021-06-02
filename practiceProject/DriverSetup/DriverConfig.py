@@ -8,8 +8,6 @@ drivers_dict = {
 }
 
 def config_driver(driver_kind):
-
     print("Loading driver: "+driver_kind)
-    #print("En el mapa "+str(drivers_dict[driver_kind]))
     setup = importlib.import_module(drivers_dict[driver_kind])
-    ParentPage.driver_loader_func = setup.configDriver()
+    ParentPage.driver=setup.configDriver()

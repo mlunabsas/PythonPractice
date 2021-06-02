@@ -1,10 +1,14 @@
 from DriverSetup.DriverConfig import config_driver
 from PageObjects.ParentPage import ParentPage
+import importlib
 
 def config_run(browser,env,cases):
     config_driver(browser)
-    ParentPage.environment = env
-    print("Browser en el page object:", ParentPage.driver_loader_func)
-    print("Environment en el page object:" + ParentPage.environment)
-    #for case in cases:
-    #    exec(open(case).read())
+
+    environment_module = importlib.import_module(env)
+    environment_class = getattr(environment_module, env[12:len(env)])
+    ParentPage.test_values = environment_class()
+    print("Browser en el page object:", ParentPage.driver)
+    print("Environment en el page object:", ParentPage.test_values)
+    # for case in cases:
+    exec(open(cases).read())

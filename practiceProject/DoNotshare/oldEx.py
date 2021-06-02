@@ -16,7 +16,7 @@ if __name__ == '__main__':
 # See PyCharm help at https://www.jetbrains.com/help/pycharm/
 global KM
 KM = 11
-exec(open("./TestCases/FirstTest.py").read())
+exec(open("../TestCases/FirstTest.py").read())
 
 
 printGlobal()
