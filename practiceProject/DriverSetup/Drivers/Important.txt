@@ -1,0 +1,1 @@
+Si la ejecucion de un caso de prueba con firefox no cierra la ventana del mismo, o si la interfaz se ve desactualizada, se puede deber a que el archivo geckodriver esta bloqueado por el SO. Si esto ocurre, el driver no va a actualizar la version de firefox y algunos comandos no van a funcionar de forma correcta.

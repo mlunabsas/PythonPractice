@@ -6,6 +6,7 @@ class LoginPage(ParentPage):
     login_button_xpath = "//input[@id='btnLogin']"
 
     def go_to_page(self):
+        self.driver.maximize_window()
         self.driver.get(self.test_values.URL)
 
     def set_user(self,user):

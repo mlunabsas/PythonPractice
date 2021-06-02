@@ -1,6 +1,6 @@
 import argparse
 from TestExec.TestRunner import config_run
-#Usage ex: python runner.py --browser chrome firefox edge --environment test testv dev
+#Usage ex: python runner.py --browser chrome firefox edge --environment test testv dev --test suite
 
 # defined command line options
 # this also generates --help and error handling
@@ -17,7 +17,7 @@ CLI.add_argument(
   "--environment",
   nargs="*",
   type=str,  # any type/callable can be used here
-  default=["Environment.TestVolatil"],
+  default=["TestVolatil"],
 )
 
 CLI.add_argument(
