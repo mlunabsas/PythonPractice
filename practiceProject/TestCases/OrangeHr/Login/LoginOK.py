@@ -1,6 +1,6 @@
-from PageObjects.OrangeHR.Login.LoginPage import Login
+from PageObjects.OrangeHR.Login.LoginPage import LoginPage
 
-login = Login()
+login = LoginPage()
 login.go_to_page()
 login.set_user(login.test_values.USER)
 login.set_password(login.test_values.PASS)

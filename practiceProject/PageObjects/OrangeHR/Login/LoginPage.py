@@ -1,6 +1,6 @@
 from PageObjects.ParentPage import ParentPage
 
-class Login(ParentPage):
+class LoginPage(ParentPage):
     user_field_xpath = "//input[@id='txtUsername']"
     pass_field_xpath = "//input[@id='txtPassword']"
     login_button_xpath = "//input[@id='btnLogin']"
