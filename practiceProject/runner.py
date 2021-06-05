@@ -1,6 +1,6 @@
 import argparse
 from TestExec.TestRunner import config_run
-#Usage ex: python runner.py --browser chrome firefox edge --environment test testv dev --test Suites.WorkBench
+#Usage ex: python3 runner.py --browser chrome firefox edge --environment test testv dev --test Suites.WorkBench
 
 # defined command line options
 # this also generates --help and error handling
