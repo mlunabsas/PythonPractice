@@ -1,6 +1,6 @@
 import argparse
 from TestExec.TestRunner import config_run
-#Usage ex: python runner.py --browser chrome firefox edge --environment test testv dev --test suite
+#Usage ex: python runner.py --browser chrome firefox edge --environment test testv dev --test Suites.WorkBench
 
 # defined command line options
 # this also generates --help and error handling
@@ -24,7 +24,7 @@ CLI.add_argument(
   "--test",
   nargs="*",
   type=str,  # any type/callable can be used here
-  default=["TestCases/OrangeHr/Login/LoginOK.py"],
+  default=["Suites.WorkBench"],
 )
 
 # parse the command line
@@ -34,4 +34,6 @@ args = CLI.parse_args()
 print("Browser: %r" % args.browser)
 print("Environment: %r" % args.environment)
 print("Case/Suite: %r" % args.test)
-config_run(args.browser[0],args.environment[0],args.test[0])
+for browser in args.browser:
+  for environment in args.environment:
+    config_run(browser,environment,args.test)

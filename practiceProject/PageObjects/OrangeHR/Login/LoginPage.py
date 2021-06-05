@@ -6,6 +6,7 @@ class LoginPage(ParentPage):
     login_button_xpath = "//input[@id='btnLogin']"
 
     def go_to_page(self):
+        #ACA! "missing 1 required positional argument: 'self'" ocurre porque driver no esta inicializado a este punto
         self.driver.maximize_window()
         self.driver.get(self.test_values.URL)
 
