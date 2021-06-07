@@ -1,4 +1,4 @@
-from PageObjects.ParentPage import ParentPage
+import runner
 import importlib
 
 drivers_dict = {
@@ -7,7 +7,7 @@ drivers_dict = {
   "edge": "DriverSetup.EdgeSetup"
 }
 
-def config_driver(driver_kind):
-    print("Loading driver: "+driver_kind)
-    setup = importlib.import_module(drivers_dict[driver_kind])
-    ParentPage.driver=setup.configDriver()
+def config_driver():
+    print("Loading driver: "+runner.actual_browser)
+    setup = importlib.import_module(drivers_dict[runner.actual_browser])
+    return setup.configDriver()

@@ -29,11 +29,17 @@ CLI.add_argument(
 
 # parse the command line
 args = CLI.parse_args()
-
+actual_browser=None
+actual_environment=None
 # access CLI options
-print("Browser: %r" % args.browser)
-print("Environment: %r" % args.environment)
-print("Case/Suite: %r" % args.test)
+
+
+
 for browser in args.browser:
+  print("Browser: %r" % args.browser)
+  actual_browser = browser
   for environment in args.environment:
-    config_run(browser,environment,args.test)
+    print("Environment: %r" % args.environment)
+    actual_environment=environment
+    print("Case/Suite: %r" % args.test)
+    config_run(args.test)

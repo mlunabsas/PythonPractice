@@ -1,12 +1,15 @@
 from PageObjects.ParentPage import ParentPage
 
 class LoginPage(ParentPage):
-    user_field_xpath = "//input[@id='txtUsername']"
-    pass_field_xpath = "//input[@id='txtPassword']"
-    login_button_xpath = "//input[@id='btnLogin']"
+
+    def __init__(self):
+        self.user_field_xpath = "//input[@id='txtUsername']"
+        self.pass_field_xpath = "//input[@id='txtPassword']"
+        self.login_button_xpath = "//input[@id='btnLogin']"
 
     def go_to_page(self):
         #ACA! "missing 1 required positional argument: 'self'" ocurre porque driver no esta inicializado a este punto
+        self.start_driver()
         self.driver.maximize_window()
         self.driver.get(self.test_values.URL)
 

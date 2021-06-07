@@ -1,6 +1,6 @@
 cases=[
     #Login
-    "TestCases/OrangeHr/Login/LoginOK.py",
-    "TestCases/OrangeHr/Login/LoginFail.py"
+    "TestCases/OrangeHr/Login/test_LoginOK.py",
+    "TestCases/OrangeHr/Login/test_LoginFail.py"
     #Main
 ]

@@ -1,15 +1,14 @@
-from DriverSetup.DriverConfig import config_driver
-from PageObjects.ParentPage import ParentPage
+# from DriverSetup.DriverConfig import config_driver
+# from PageObjects.ParentPage import ParentPage
 import importlib
 import pytest
 
-def config_run(browser,env,cases):
-    for suites in cases:
-        suite = importlib.import_module(suites)
+def config_run(case_files):
+    #this handle all the file/s like Workbench sent
+    for file in case_files:
+        # this handle each file sent
+        suite = importlib.import_module(file)
         for test in suite.cases:
-            config_driver(browser)
-            environment_module = importlib.import_module("Environment."+env)
-            environment_class = getattr(environment_module, env)
-            ParentPage.test_values = environment_class()
-            #test should have something like TestCases/OrangeHr/Login/LoginOK.py
-            pytest.main(["-x", test])
+            #test should have something like TestCases/OrangeHr/Login/test_LoginOK.py
+            #atributes like "-x" or "-m" sould be sent here like another parameter ex: pytest.main("-x",[test])
+            pytest.main([test])
