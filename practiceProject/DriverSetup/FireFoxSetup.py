@@ -10,7 +10,7 @@ options.add_argument("--start-maximized")
 
 driver_executables = {
   "Windows": "DriverSetup/Drivers/geckodriver.exe",
-  "Darwin": "DriverSetup/Drivers/geckodriver-v0.29.1-macos-aarch64.tar",
+  "Darwin": "DriverSetup/Drivers/geckodriver",
   "Linux": "DriverSetup/Drivers/geckodriver"
 }
 
