@@ -7,4 +7,4 @@ class BaseTest:
         # print("setup")
         yield "resource"
         # print("teardown")
-        ParentPage.close(ParentPage)
+        ParentPage.close()
