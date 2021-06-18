@@ -13,7 +13,8 @@ class TestUserManagement(BaseTest):
         login.click_login()
         menu_admin = DashboardPage()
         menu_admin.hover_over_admin()
-        menu_admin.user_management_click()
+        menu_admin.hover_over_user_management()
+        menu_admin.menu_users_click()
 
         assert 1 == len(menu_admin.driver.find_elements_by_xpath('//*[@id="systemUser-information"]/a'))
 
